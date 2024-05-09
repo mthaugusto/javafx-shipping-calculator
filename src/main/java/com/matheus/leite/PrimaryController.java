@@ -1,6 +1,8 @@
 package com.matheus.leite;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -101,7 +103,8 @@ public class PrimaryController {
             double valorNF = Double.parseDouble(valorNfTextField.getText());
             double valorSeguro = valorNF * TX_SEGURO;
             double valorTotal = valorFrete + valorSeguro;
-            valorFreteText.setText(String.valueOf(valorTotal));
+            DecimalFormat df = new DecimalFormat("#0.00");
+            valorFreteText.setText(df.format(valorTotal));
         }
 
         if (umEVinteRadioButton.isSelected()) {
@@ -129,7 +132,8 @@ public class PrimaryController {
             double valorNF = Double.parseDouble(valorNfTextField.getText());
             double valorSeguro = valorNF * TX_SEGURO;
             double valorTotal = valorFrete + valorSeguro;
-            valorFreteText.setText(String.valueOf(valorTotal));
+            DecimalFormat df = new DecimalFormat("#0.00");
+            valorFreteText.setText(df.format(valorTotal));
         }
 
         if (ambosRadioButton.isSelected()) {
@@ -156,7 +160,6 @@ public class PrimaryController {
                 valorFrete = 403.98 * peso / 1000;
             }
 
-
             if (peso2 > 1 && peso2 <= 500) {
                 valorFrete2 = 465.68;
             } else if (peso2 <= 1000) {
@@ -182,7 +185,8 @@ public class PrimaryController {
             double valorNF = Double.parseDouble(valorNfTextField.getText());
             double valorSeguro = valorNF * TX_SEGURO;
             double valorTotal = valorFrete + valorSeguro;
-            valorFreteText.setText(String.valueOf(valorTotal));
+            DecimalFormat df = new DecimalFormat("#0.00");
+            valorFreteText.setText(df.format(valorTotal));
         }
 
     }
